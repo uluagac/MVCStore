@@ -1,3 +1,4 @@
+using Akademi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Akademi.Controllers
@@ -12,6 +13,14 @@ namespace Akademi.Controllers
     public IActionResult Apply()
     {
       return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Apply([FromForm] Candidate model)
+    {
+      Repository.Add(model);
+      return View("Feedback", model);
     }
   }
 }
