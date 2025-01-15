@@ -6,6 +6,7 @@
 
 ## Temel Konular
 - MVC temel yapısı
+- Coding by Convention
 - Dependency Injection
 - Inversion of Control
 - Layout ve partial view kavramı
