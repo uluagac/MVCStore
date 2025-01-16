@@ -13,3 +13,4 @@
 - Katmanlı mimari yapısı (Entity, Repository, Service, StoreApp)
 - Unit of Work yapısı (RepositoryManager ve ServiceManager)
 - ViewComponent
+- Areas
