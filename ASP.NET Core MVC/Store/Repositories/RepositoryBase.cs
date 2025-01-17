@@ -26,7 +26,14 @@ namespace Repositories
 
     public T? FindByCondition(Expression<Func<T, bool>> expression, bool trackChanges)
     {
-      return trackChanges ? _context.Set<T>().Where(expression).SingleOrDefault() : _context.Set<T>().Where(expression).AsNoTracking().SingleOrDefault();
+      return trackChanges
+      ? _context.Set<T>().Where(expression).SingleOrDefault()
+      : _context.Set<T>().Where(expression).AsNoTracking().SingleOrDefault();
+    }
+
+    public void Remove(T entity)
+    {
+      _context.Set<T>().Remove(entity);
     }
   }
 }

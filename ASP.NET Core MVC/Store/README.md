@@ -14,3 +14,4 @@
 - Unit of Work yapısı (RepositoryManager ve ServiceManager)
 - ViewComponent
 - Areas
+- Model Validation
