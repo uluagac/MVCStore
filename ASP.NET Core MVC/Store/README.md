@@ -15,3 +15,4 @@
 - ViewComponent
 - Areas
 - Model Validation
+- AutoMapper (DTO (record)), İlişkiler (Foreign Key, Nav Prop, Collection Nav Prop)
