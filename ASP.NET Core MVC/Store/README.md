@@ -15,4 +15,5 @@
 - ViewComponent
 - Areas
 - Model Validation
-- AutoMapper (DTO (record)), İlişkiler (Foreign Key, Nav Prop, Collection Nav Prop)
+- Entity Relationships, Fluent API (Foreign Key, Nav Prop, Collection Nav Prop)
+- AutoMapper (DTO (record sınıfı))
