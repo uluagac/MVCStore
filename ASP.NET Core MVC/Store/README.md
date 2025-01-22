@@ -17,3 +17,4 @@
 - Model Validation
 - Entity Relationships, Fluent API (Foreign Key, Nav Prop, Collection Nav Prop)
 - AutoMapper (DTO (record sınıfı))
+- FormFile, File Operation, enctype

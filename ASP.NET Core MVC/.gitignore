@@ -484,6 +484,7 @@ $RECYCLE.BIN/
 *.swp
 
 #
+*.jpg
 *.db
 *.db-shm
 *.db-wal
