@@ -18,3 +18,4 @@
 - Entity Relationships, Fluent API (Foreign Key, Nav Prop, Collection Nav Prop)
 - AutoMapper (DTO (record sınıfı))
 - FormFile, File Operation, enctype
+- RazorPages, MVVM (Model-View-View-Model), Page Model, Service kaydı
