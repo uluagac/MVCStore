@@ -19,3 +19,4 @@
 - AutoMapper (DTO (record sınıfı))
 - FormFile, File Operation, enctype
 - RazorPages, MVVM (Model-View-View-Model), Page Model, Service kaydı
+- Sessions, Extensions (Session, HttpRequest), Order Page
