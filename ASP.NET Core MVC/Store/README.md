@@ -21,3 +21,4 @@
 - RazorPages, MVVM (Model-View-View-Model), Page Model, Service kaydı
 - Sessions, Session and HttpRequest Extensions, Order Page
 - Extensions (Genişleme İfadeleri), Auto Migrate, Filters
+- TagHelpers; Build-in and custom tag helpers, Pagination
