@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace StoreApp.Infrastructe.Extensions
+namespace StoreApp.Infrastructure.Extensions
 {
   public static class SessionExtension // Genellikle extension ifadeler static classlara yazılır ve extension metotlar static olur.
   {
