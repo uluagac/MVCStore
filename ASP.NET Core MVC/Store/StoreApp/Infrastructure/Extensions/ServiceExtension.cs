@@ -1,4 +1,5 @@
 using Entities.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Contracts;
@@ -10,7 +11,6 @@ namespace StoreApp.Infrastructure.Extensions
 {
   public static class ServiceExtension
   {
-    /// <summary>
     /// Database için extension
     /// </summary>
     /// <param name="services">Ekleme yapılacak class</param>
@@ -20,13 +20,23 @@ namespace StoreApp.Infrastructure.Extensions
       services.AddDbContext<RepositoryContext>(options =>
       {
         options.UseSqlite(configuration.GetConnectionString("sqlconnection"), b => b.MigrationsAssembly("StoreApp"));
+        options.EnableSensitiveDataLogging(true);
       }
       );
     }
-    /// <summary>
-    /// Sessiona erişmek için extension
-    /// </summary>
-    /// <param name="services">Ekleme yapılacak class</param>
+    public static void ConfigureIdentity(this IServiceCollection services)
+    {
+      services.AddIdentity<IdentityUser, IdentityRole>(options =>
+      {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.User.RequireUniqueEmail = true;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 6;
+      })
+      .AddEntityFrameworkStores<RepositoryContext>();
+    }
     public static void ConfigureSession(this IServiceCollection services)
     {
       services.AddDistributedMemoryCache();
@@ -38,10 +48,6 @@ namespace StoreApp.Infrastructure.Extensions
       services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
       services.AddScoped<Cart>(c => SessionCart.GetCart(c));
     }
-    /// <summary>
-    /// Repository IoC için extension
-    /// </summary>
-    /// <param name="services">Ekleme yapılacak class</param>
     public static void ConfigureRepositoryRegistration(this IServiceCollection services)
     {
       services.AddScoped<IRepositoryManager, RepositoryManager>();
@@ -49,10 +55,6 @@ namespace StoreApp.Infrastructure.Extensions
       services.AddScoped<ICategoryRepository, CategoryRepository>();
       services.AddScoped<IOrderRepository, OrderRepository>();
     }
-    /// <summary>
-    /// Service IoC için extension
-    /// </summary>
-    /// <param name="services">Ekleme yapılacak class</param>
     public static void ConfigureServiceRegistration(this IServiceCollection services)
     {
       services.AddScoped<IServiceManager, ServiceManager>();
