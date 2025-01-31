@@ -5,5 +5,6 @@ namespace Services.Contracts
     IProductService ProductService { get; }
     ICategoryServices CategoryService { get; }
     IOrderService OrderService { get; }
+    IAuthService AuthService { get; }
   }
 }

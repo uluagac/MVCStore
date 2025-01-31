@@ -1,7 +1,7 @@
 <nav class="navbar bg-light border-bottom navbar-expand-lg bg-body-tertiary">
   <div class="container">
     <a class="navbar-brand" href="/">
-    <i class="fa-solid fa-store fa-2x"></i>
+      <i class="fa-solid fa-store fa-2x"></i>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,11 +37,7 @@
             Cart(@await Component.InvokeAsync("CartSummary"))
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
-            Admin
-          </a>
-        </li>
+        <partial name="_LoginMenu" />
       </ul>
     </div>
   </div>
