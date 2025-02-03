@@ -22,4 +22,5 @@
 - Sessions, Session and HttpRequest Extensions, Order Page
 - Extensions (Genişleme İfadeleri), Auto Migrate, Filters
 - TagHelpers; Build-in and custom tag helpers, Pagination
-- Identity, Users, AccountController, Login & Registration, AuthService
+- Identity, Login & Registration, Authentication (Kimlik Doğrulama) ve Authorization (Yetkilendirme)
+-

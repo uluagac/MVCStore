@@ -23,12 +23,20 @@
         <td>@user.UserName</td>
         <td>-</td>
         <td>
-          <div class="btn btn-group">
-            <a class="btn btn-sm btn-warning" asp-action="Update" asp-route-id="@user.UserName">
+          <div class="btn-group">
+            <a class="btn btn-secondary rounded-0" asp-action="Update" asp-route-id="@user.UserName">
               Edit
             </a>
-            <a class="btn btn-sm btn-info">Reset Password</a>
-            <a class="btn btn-sm btn-danger">Delete</a>
+            <a class="btn btn-outline-secondary rounded-0" asp-action="ResetPassword" asp-route-id="@user.UserName">
+              Reset Password
+            </a>
+            <form method="POST" asp-action="DeleteOneUser">
+              <input type="hidden" name="UserName" value="@user.UserName" />
+              <button type="submit" class="btn btn-danger rounded-0">
+                <i class="fa-solid fa-trash"></i>
+                Delete
+              </button>
+            </form>
           </div>
         </td>
       </tr>
