@@ -1,3 +1,5 @@
 <div class="my-5">
   <partial name="_Cards" />
 </div>
+
+@await Component.InvokeAsync("Showcase", new { Page = "list" })
